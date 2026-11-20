@@ -17,7 +17,9 @@
 7. [Industry Standards & Validation Context](#7-industry-standards--validation-context)
 8. [Open Challenges & Gaps](#8-open-challenges--gaps)
 9. [Roadmap: Building the Reference Hub](#9-roadmap-building-the-reference-hub)
-10. [Sources](#10-sources)
+10. [Where this reference meets the PINNeAPPle codebase](#10-where-this-reference-meets-the-pinneapple-codebase)
+11. [Contributing](#11-contributing)
+12. [Sources](#12-sources)
 
 ---
 
@@ -243,7 +245,49 @@ A phased, realistic plan for an open-source repository to become the leading pub
 
 ---
 
-## 10. Sources
+## 10. Where this reference meets the PINNeAPPle codebase
+
+*Added November 2026.* Everything above describes the field. This section is the other half: the places inside the PINNeAPPle organisation where each topic has something runnable, so a claim here can be checked against a case rather than taken on trust. Links are to live issues and finished experiments, not aspirations.
+
+### Use cases and open work in [`PINNeAPPle`](https://github.com/PINNeAPPle-Labs/PINNeAPPle)
+
+| Topic from this document | Where it lives |
+|---|---|
+| Section 6 — vehicle surface-pressure datasets | [#1488](https://github.com/PINNeAPPle-Labs/PINNeAPPle/issues/1488) vehicle-engineering surrogate benchmarks recreated: car surface pressure (CarBench) |
+| Section 2 — graph networks on structural parts | [#1502](https://github.com/PINNeAPPle-Labs/PINNeAPPle/issues/1502) contact pressure as a field, MeshGraphNet vs Transolver vs GNN |
+| Section 4 — crash and impact as a baseline | [#1485](https://github.com/PINNeAPPle-Labs/PINNeAPPle/issues/1485) the crash solver's erosion path creates energy, so a campaign has to stop before the first shock |
+| Section 7 — impact and drop validation | [#1503](https://github.com/PINNeAPPle-Labs/PINNeAPPle/issues/1503) drop test: gravity, a floor, the sweep and its surrogate |
+| Section 8 — morphing and mission-adaptive aerodynamics | [#1306](https://github.com/PINNeAPPle-Labs/PINNeAPPle/issues/1306) AEROMORPH, a race car that changes its own aerodynamics for the corner it is in |
+
+### Finished experiments in [`PINNeAPPle-Benchmark`](https://github.com/PINNeAPPle-Labs/PINNeAPPle-Benchmark)
+
+| Experiment | What it measures |
+|---|---|
+| [`03_bumper_beam_transolver`](https://github.com/PINNeAPPle-Labs/PINNeAPPle-Benchmark/tree/main/experiments/03_bumper_beam_transolver) | A bumper-beam crash surrogate from an OpenRadioss DoE campaign, a Transolver reproduction and an improvement over it, against classical baselines — the closest thing here to the Section 2 architecture comparison, on real crash data. |
+| [`09_equal_budget_pinn_fno_deeponet`](https://github.com/PINNeAPPle-Labs/PINNeAPPle-Benchmark/tree/main/experiments/09_equal_budget_pinn_fno_deeponet) | When PINNs beat data-driven surrogates and when they do not, at equal budget, across several PDE families. |
+
+### Related repositories
+
+- [`PINNeAPPle`](https://github.com/PINNeAPPle-Labs/PINNeAPPle) — the library itself: PINNs, neural operators, solvers, geometry, validation.
+- [`PINNeAPPle-CFD`](https://github.com/PINNeAPPle-Labs/PINNeAPPle-CFD) — the end-to-end CFD workflow behind the external-aerodynamics rows above.
+
+---
+
+## 11. Contributing
+
+This document is curated, and corrections are the most valuable contribution it receives.
+
+1. Open an issue or a pull request with the specific addition, correction or removal.
+2. **Cite a real, checkable source** — a paper, an official repo, a vendor page. Anything not verifiable is marked as such rather than stated as fact.
+3. Keep entries factual and neutral; no marketing language for commercial products, including PINNeAPPle's own.
+4. When adding a dataset, tool or solver, say what it is, who maintains it and where it lives.
+5. Flag what has gone stale — funding rounds, acquisitions and renamed products move quickly in this field.
+
+The full conventions are in [CONTRIBUTING.md](../CONTRIBUTING.md). If you are adding something that has a runnable counterpart in the PINNeAPPle organisation, add a row to Section 10 as well so the claim stays checkable.
+
+---
+
+## 12. Sources
 
 **Datasets & benchmark papers**
 - [DrivAerNet (arXiv:2403.08055)](https://arxiv.org/pdf/2403.08055)
@@ -335,4 +379,4 @@ A phased, realistic plan for an open-source repository to become the leading pub
 
 ---
 
-*Compiled by research pass on 2026-09-16. This is a living-document seed: several 2026-dated arXiv preprints cited above are recent and may not yet be peer-reviewed; treat vendor-reported performance multipliers (speedups, accuracy percentages) as claims to be independently reproduced, not settled benchmarks. Contributions, corrections, and citation updates are the intended lifeblood of the repository this document seeds.*
+*Compiled by research pass on 2026-09-16. Sections 10 and 11 were added in November 2026 to tie each topic to the runnable part of the PINNeAPPle organisation. This is a living-document seed: several 2026-dated arXiv preprints cited above are recent and may not yet be peer-reviewed; treat vendor-reported performance multipliers (speedups, accuracy percentages) as claims to be independently reproduced, not settled benchmarks. Contributions, corrections, and citation updates are the intended lifeblood of the repository this document seeds.*
